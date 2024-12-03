@@ -79,6 +79,11 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
+<<<<<<< Updated upstream:Assets/Materials/Sign Color.mat
     - _Color: {r: 0.9150943, g: 0.8376089, b: 0.6690548, a: 1}
     - _EmissionColor: {r: 0.5849056, g: 0.5269934, b: 0.42212528, a: 1}
+=======
+    - _Color: {r: 0.4, g: 0.3, b: 0.2, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+>>>>>>> Stashed changes:Assets/Materials/DirtyWaterMaterial.mat
   m_BuildTextureStacks: []
