@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 repository "Scene1_3DUI@Davidson@cloud"
+=======
+repository "CSC361_VirtualReality_1@Davidson@cloud"
+>>>>>>> Stashed changes
   path "/"
     br "/main"
     co "/main"

@@ -13,6 +13,7 @@ public class CharacterSwap : MonoBehaviour
     private IPlayerMovement character1Movement;  // Reference to character1's movement script
     private IPlayerMovement character2Movement;  // Reference to character2's movement script
 
+<<<<<<< Updated upstream
     void Start()
     {
         character1Movement = character1.GetComponent<IPlayerMovement>();
@@ -22,6 +23,35 @@ public class CharacterSwap : MonoBehaviour
         character2Movement.canMove = false;
 
         // Set initial active character and camera
+=======
+
+    void Start()
+    {
+        if (character1 == null || character2 == null)
+        {
+            Debug.LogError("Character references are not assigned!");
+            return;
+        }
+
+        if (camera1 == null || camera2 == null)
+        {
+            Debug.LogError("Camera references are not assigned!");
+            return;
+        }
+
+        character1Movement = character1.GetComponent<IPlayerMovement>();
+        character2Movement = character2.GetComponent<IPlayerMovement>();
+
+        if (character1Movement == null || character2Movement == null)
+        {
+            Debug.LogError("IPlayerMovement component not found on one or both characters!");
+            return;
+        }
+
+        character1Movement.canMove = true;
+        character2Movement.canMove = false;
+
+>>>>>>> Stashed changes
         activeCharacter = character1;
         activeCamera = camera1;
 
@@ -29,6 +59,10 @@ public class CharacterSwap : MonoBehaviour
         camera2.enabled = false;
     }
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab))
@@ -39,6 +73,15 @@ public class CharacterSwap : MonoBehaviour
 
     void SwapCharacter()
     {
+<<<<<<< Updated upstream
+=======
+        if (character1Movement == null || character2Movement == null)
+        {
+            Debug.LogError("Movement components are not assigned!");
+            return;
+        }
+        
+>>>>>>> Stashed changes
         if (character1Movement.canMove)
         {
             activeCharacter = character2;

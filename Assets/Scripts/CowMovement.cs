@@ -12,7 +12,7 @@ public class CowMovement : MonoBehaviour, IPlayerMovement
     public float gravity = 10f;
     public float lookSpeed = 2f;
     public float lookXLimit = 45f;
-    public float defaultHeight = 2f;
+    public float defaultHeight = .5f;
     public float crouchHeight = 1f;
     public float crouchSpeed = 3f;
     private Vector3 moveDirection = Vector3.zero;
