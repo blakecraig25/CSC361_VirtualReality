@@ -238,7 +238,11 @@ public class PlayerCollector : MonoBehaviour
         }
         if(numWateredPlants == 1){
             allFlowersWatered = true;
+<<<<<<< Updated upstream
             Debug.Log(allFlowersWatered);
+=======
+            flowerWinCanvas.SetActive(true);
+>>>>>>> Stashed changes
         }
     }
 

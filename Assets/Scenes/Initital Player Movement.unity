@@ -15679,6 +15679,7 @@ MonoBehaviour:
   compostBin1: {fileID: 0}
   compostBin2: {fileID: 0}
   wasteCollected: 0
+<<<<<<< Updated upstream
   playerCamera: {fileID: 830316820}
   wellInteraction: {fileID: 0}
 --- !u!64 &758055681
