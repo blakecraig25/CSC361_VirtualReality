@@ -12,6 +12,7 @@ public class ChickenMovement : MonoBehaviour, IPlayerMovement
     public float gravity = 10f;
     public float lookSpeed = 2f;
     public float lookXLimit = 45f;
+    public float defaultHeight = 1.5f;
     private Vector3 moveDirection = Vector3.zero;
     private float rotationX = 0;
     private CharacterController characterController;
@@ -24,6 +25,7 @@ public class ChickenMovement : MonoBehaviour, IPlayerMovement
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        characterController.height = defaultHeight;
     }
 
     void Update()

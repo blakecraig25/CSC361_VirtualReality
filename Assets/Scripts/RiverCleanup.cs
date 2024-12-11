@@ -29,7 +29,7 @@ public class RiverCleanup : MonoBehaviour
         if (playerBucket != null)
         {
             // Dynamically calculate clean progress
-            cleanProgress = Mathf.Clamp01((float)playerBucket.wasteCollected / 9f); // Assuming max waste is 9
+            cleanProgress = Mathf.Clamp01((float)playerBucket.wasteCollected / 6f); // Assuming max waste is 6
         }
 
         // Blend between dirty and clean materials

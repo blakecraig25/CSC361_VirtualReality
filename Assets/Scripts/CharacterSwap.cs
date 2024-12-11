@@ -62,7 +62,6 @@ public class CharacterSwap : MonoBehaviour
             character2Movement.canMove = false;
         }
 
-        Debug.Log("Switched to: " + activeCharacter.name);
     }
 
     public GameObject GetActiveCharacter()

@@ -23,10 +23,6 @@ public class WagonStorage : MonoBehaviour
         {
             Debug.LogError("ScrollSpeed component not found on the waterwheel.");
         }
-        else
-        {
-            Debug.Log("ScrollSpeed component successfully linked to the waterwheel.");
-        }
     }
 
     void Update()

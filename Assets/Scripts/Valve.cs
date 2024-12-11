@@ -57,9 +57,9 @@ public class Valve : MonoBehaviour
     public void InsertValve()
     {
         // Position the valve at the slot and lock it
-        valve.transform.position = valveSlot.transform.position + Vector3.left * 0.1f; // Assuming slotPosition is predefined
-        valve.transform.rotation = valveSlot.transform.rotation;
         valve.transform.SetParent(valveSlot.transform);
+        valve.transform.localPosition = Vector3.forward * 2.0f + Vector3.up * 0.3f;
+        valve.transform.localRotation = Quaternion.Euler(0, 0, 0);
 
         // Set it as "in slot"
         isInSlot = true;
