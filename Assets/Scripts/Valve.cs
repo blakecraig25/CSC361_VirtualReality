@@ -10,6 +10,7 @@ public class Valve : MonoBehaviour
     public GameObject river;
     private bool isInSlot = false;
     private bool isNearPlayer = false;
+    public AudioSource audioSource;
 
     void Start()
     {
@@ -52,6 +53,8 @@ public class Valve : MonoBehaviour
             riverAnimator.SetTrigger("Rise"); 
         }
         waterStream.SetActive(true);
+
+        PlaySound();
     }
 
     public void InsertValve()
@@ -68,5 +71,12 @@ public class Valve : MonoBehaviour
         GetComponent<Rigidbody>().isKinematic = true;
     }
 
+    void PlaySound()
+    {
+        if (audioSource != null)
+        {
+            audioSource.Play(); // Play the audio
+        }
+    }
     
 }

@@ -5,6 +5,8 @@ public class Interaction : MonoBehaviour
     public GameObject promptCanvas; // Assign the panel GameObject in the Inspector
     public GameObject infoCanvas;
     private bool isPlayerNearby = false;
+    public AudioSource audioSource;
+
     void Start()
     {
         // Ensure the text panel is hidden initially
@@ -17,6 +19,7 @@ public class Interaction : MonoBehaviour
         if (isPlayerNearby && Input.GetKeyDown(KeyCode.E))
         {
             ToggleInfoCanvas();
+            PlaySound();
         }
     }
     private void TogglePromptCanvas()
@@ -50,4 +53,13 @@ public class Interaction : MonoBehaviour
             promptCanvas.SetActive(false);
         }
     }
+
+    void PlaySound()
+    {
+        if (audioSource != null)
+        {
+            audioSource.Play(); // Play the audio
+        }
+    }
+
 }

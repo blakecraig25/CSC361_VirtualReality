@@ -23,8 +23,10 @@ public class PlayerCollector : MonoBehaviour
     //Global Variables for Garden
     private bool isNearWell = false;
     private bool isNearPlant = false;
+    private bool isNearWateringCan = false;
     private bool isNearWaterCanSpawn = false;
     private bool allFlowersWatered = false;
+    int numWateredPlants = 0;
     public GameObject flowerSuccessCanvas;
     
 
@@ -98,7 +100,7 @@ public class PlayerCollector : MonoBehaviour
         }
         else if (other.CompareTag("WateringCan"))
         {
-            isNearWaste = true; 
+            isNearWateringCan = true; 
             currentObject = other.gameObject;
         }
         else if (other.CompareTag("Well"))
@@ -149,6 +151,10 @@ public class PlayerCollector : MonoBehaviour
         {
             isNearWaterCanSpawn = false;;
         }
+        else if (other.CompareTag("WateringCan"))
+        {
+            isNearWateringCan = false; 
+        }
         else if (other.CompareTag("Valve") && valveInserted == false)
         {
             isNearValve = false;
@@ -174,7 +180,11 @@ public class PlayerCollector : MonoBehaviour
             }
 
         }
-        if ((isNearWaste || isNearValve) && Input.GetKeyDown(KeyCode.E) && !isCarryingObject && valveInserted == false)
+        if ((isNearWaste || isNearWateringCan) && Input.GetKeyDown(KeyCode.E) && !isCarryingObject)
+        {
+            PickUpObject();
+        }
+        else if(isNearValve && Input.GetKeyDown(KeyCode.E) && !isCarryingObject && valveInserted == false)
         {
             PickUpObject();
         }
@@ -235,7 +245,7 @@ public class PlayerCollector : MonoBehaviour
         else if (currentObject.CompareTag("WateringCan"))
         {
             wateringCan = currentObject.GetComponent<WateringCan>();
-            forwardPosition = playerCamera.transform.position + playerCamera.transform.forward * 0.7f + Vector3.down * 0.1f;
+            forwardPosition = playerCamera.transform.position + playerCamera.transform.forward * 0.8f + Vector3.down * 0.4f;
 
             // Set local rotation for watering can
             Quaternion targetRotation = Quaternion.Euler(50f, 0f, 0f); // Rotate by 20 degrees on X axis
@@ -282,11 +292,11 @@ public class PlayerCollector : MonoBehaviour
 
     void WaterPlant()
     {
-        int numWateredPlants = 0;
         if (currentPlant != null)
         {
             currentPlant.WaterPlant(); // Call WaterPlant method to bloom the plant
             numWateredPlants++;
+            Debug.Log(numWateredPlants);
         }
         if(numWateredPlants == 12){
             allFlowersWatered = true;
